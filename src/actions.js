@@ -1,13 +1,14 @@
 // Actions
-export const ADD_STORY    = 'ADD_STORY';
+export const SET_STORY    = 'SET_STORY';
 export const ADD_RULE     = 'ADD_RULE';
 export const ADD_EXAMPLE  = 'ADD_EXAMPLE';
 export const ADD_QUESTION = 'ADD_QUESTION';
+export const RESET        = 'RESET';
 
 // Action Creators
-export const addStory = (story) => {
+export const setStory = (story) => {
   return {
-    type: ADD_STORY,
+    type: SET_STORY,
     story
   };
 };
@@ -35,3 +36,10 @@ export const addQuestion = (question) => {
     question
   };
 };
+
+export const reset = () => {
+  return {
+    type: RESET
+  };
+};
+
