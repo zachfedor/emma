@@ -1,6 +1,11 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import CardList from './CardList';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducer from './reducer';
+
+const store = createStore(reducer);
 
 describe('CardList', () => {
 
@@ -30,15 +35,18 @@ describe('CardList', () => {
     const cards = ['one', 'two'];
     const examplesByRule = { 0: ['a', 'b'], 1: ['c'] };
     const component = mount(
-      <CardList
-        type="rule"
-        cards={cards}
-        examplesByRule={examplesByRule}
-      />
+      <Provider store={store}>
+        <CardList
+          type="rule"
+          cards={cards}
+          examplesByRule={examplesByRule}
+        />
+      </Provider>
     );
 
     expect(component.find('h2').text()).toBe('rule');
     expect(component.find('.Card').length).toBe(2);
+    expect(component.find('.AddCard').length).toBe(1);
   });
 
 });

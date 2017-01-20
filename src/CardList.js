@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Card from './Card';
+import AddCard from './AddCard';
 
 class CardList extends Component {
   render() {
@@ -19,6 +20,8 @@ class CardList extends Component {
         <h2>{this.props.type}</h2>
 
         {cardElements}
+
+        <AddCard type={this.props.type} />
       </section>
     );
   }
