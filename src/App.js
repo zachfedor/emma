@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Story from './Story';
+import Rules from './Rules';
+import Questions from './Questions';
 import logo from './logo.svg';
 import './App.css';
 
@@ -13,8 +15,8 @@ class App extends Component {
         </header>
 
         <Story />
-        <p>cardlist for rules</p>
-        <p>cardlist for questions</p>
+        <Rules />
+        <Questions />
       </main>
     );
   }
