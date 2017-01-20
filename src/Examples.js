@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import CardList from './CardList';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, { ruleId }) => {
   return {
-    type: 'rule',
-    cards: state.rules
+    type: 'example',
+    cards: state.examplesByRule[ruleId]
   };
 };
 
@@ -12,10 +12,10 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-const Rules = connect(
+const Examples = connect(
   mapStateToProps,
   mapDispatchToProps
 )(CardList);
 
-export default Rules;
+export default Examples;
 
