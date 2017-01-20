@@ -7,7 +7,7 @@ describe('Reducer', () => {
     const newState = reducer(undefined, { type: 'default' });
 
     expect(newState).toEqual({
-      story: null,
+      story: '',
       rules: [],
       examplesByRule: {},
       questions: []
@@ -35,7 +35,7 @@ describe('Reducer', () => {
     const stateOne = reducer(initialState, actions.addRule('rule one'));
 
     expect(stateOne).toEqual({
-      story: null,
+      story: '',
       rules: ['rule one'],
       examplesByRule: {},
       questions: []
@@ -51,7 +51,7 @@ describe('Reducer', () => {
     const stateOne = reducer(initialState, action);
 
     expect(stateOne).toEqual({
-      story: null,
+      story: '',
       rules: [],
       examplesByRule: { 1: ['The one where...'] },
       questions: []
@@ -77,7 +77,7 @@ describe('Reducer', () => {
     const stateOne = reducer(initialState, action);
 
     expect(stateOne).toEqual({
-      story: null,
+      story: '',
       rules: [],
       examplesByRule: {},
       questions: [ 'What happens when..?' ]

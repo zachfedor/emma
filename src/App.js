@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Story from './Story';
 import logo from './logo.svg';
 import './App.css';
 
@@ -11,7 +12,7 @@ class App extends Component {
           <h2>emma</h2>
         </header>
 
-        <p>story</p>
+        <Story />
         <p>cardlist for rules</p>
         <p>cardlist for questions</p>
       </main>
