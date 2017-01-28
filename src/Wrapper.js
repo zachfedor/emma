@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Story from './Story';
 import Rules from './Rules';
 import Questions from './Questions';
+import './Wrapper.css';
 
 const mapStateToProps = (state) => {
   return {

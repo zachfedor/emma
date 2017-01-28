@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Wrapper from './Wrapper';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -8,8 +7,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>emma</h2>
+          <h1 className="title"><a href="#">emma</a></h1>
+          <a className="header-link" href="#">about</a>
         </header>
 
         <Wrapper />

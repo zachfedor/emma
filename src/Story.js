@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setStory } from './actions';
+import './Story.css';
 
 const mapStateToProps = (state) => {
   return {
@@ -17,18 +18,24 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
+let id = 0;
+
 export const _Story = ({ story, onSetStory }) => {
   const _onChange = (event) => {
     event.preventDefault();
     onSetStory(event.target.value);
   };
+  const componentId = "story-input-" + id++;
 
   return (
-    <input
-      placeholder="What's your user story?"
-      onChange={_onChange}
-      value={story}
-    />
+    <form className="Story">
+      <label htmlFor={componentId}>What's your user story?</label>
+      <input
+        id={componentId}
+        onChange={_onChange}
+        value={story}
+      />
+    </form>
   );
 };
 
