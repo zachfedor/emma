@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Card from './Card';
 import AddCard from './AddCard';
+import './CardList.css';
 
 class CardList extends Component {
   render() {
@@ -16,7 +17,7 @@ class CardList extends Component {
       });
 
     return (
-      <section className="CardList">
+      <section className={ 'CardList ' + this.props.type }>
         <h2>{this.props.type}</h2>
 
         {cardElements}

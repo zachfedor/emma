@@ -1,10 +1,19 @@
 import React, { Component, PropTypes } from 'react';
+import './Card.css';
 
 class Card extends Component {
   render() {
     return (
       <article className={'Card ' + this.props.type}>
-        {this.props.value}
+        <header className="Card-header">
+          <span className="author">f.l.</span>
+          <a className="button" href="#">edit</a>
+          <a className="button" href="#">delete</a>
+        </header>
+
+        <div className="Card-body">
+          {this.props.value}
+        </div>
       </article>
     );
   }

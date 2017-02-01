@@ -1,0 +1,50 @@
+.Card {
+  margin-top: 2rem;
+  /* border: 1px solid #222; */
+  border-radius: 2px;
+  box-shadow: 1px 1px 4px rgba(34, 34, 34, 0.3);
+}
+
+.Card .Card-header {
+  padding: 5px 0.5rem;
+  text-align: right;
+  /* border-bottom: 1px solid #222; */
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.Card:hover .Card-header {
+  height: auto;
+}
+
+.Card.rule .Card-header {
+  background: #466C95;
+}
+
+.Card.example .Card-header {
+  background: #5DAE8B;
+}
+
+.Card.question .Card-header {
+  background: #FF7676;
+}
+
+.Card .Card-body {
+  padding: 0.5rem;
+}
+
+.Card-header .author {
+  color: rgba(255, 255, 255, 0.7);
+}
+.Card-header .author:before {
+  content: 'created by: ';
+}
+
+.Card-header .button {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  margin-left: 4px;
+  padding: 0 4px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 2px;
+}
