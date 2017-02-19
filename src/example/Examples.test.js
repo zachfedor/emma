@@ -2,17 +2,17 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import Rules from './Rules';
-import reducer from './reducer';
+import Examples from './Examples';
+import reducer from '../app/reducer';
 
 const store = createStore(reducer);
 
-describe('Rules', () => {
+describe('Examples', () => {
 
   it('should render without crashing', () => {
     const component = shallow(
       <Provider store={store}>
-        <Rules />
+        <Examples ruleId={1} />
       </Provider>
     );
 

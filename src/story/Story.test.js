@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import Story, { _Story } from './Story';
-import reducer from './reducer';
+import reducer from '../app/reducer';
 
 const store = createStore(reducer);
 

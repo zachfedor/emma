@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Story from './Story';
-import Rules from './Rules';
-import Questions from './Questions';
+import Story from '../story/Story';
+import Rules from '../rule/Rules';
+import Questions from '../question/Questions';
 import './Wrapper.css';
 
 const mapStateToProps = (state) => {

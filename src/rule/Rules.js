@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import CardList from './CardList';
+import CardList from '../card/CardList';
 
 const mapStateToProps = (state) => {
   return {
-    type: 'question',
-    cards: state.questions
+    type: 'rule',
+    cards: state.rules
   };
 };
 
@@ -12,10 +12,10 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-const Questions = connect(
+const Rules = connect(
   mapStateToProps,
   mapDispatchToProps
 )(CardList);
 
-export default Questions;
+export default Rules;
 

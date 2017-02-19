@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setStory } from './actions';
+import { setStory } from '../app/actions';
 import './Story.css';
 
 const mapStateToProps = (state) => {
