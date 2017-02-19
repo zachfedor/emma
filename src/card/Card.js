@@ -3,17 +3,32 @@ import './Card.css';
 
 class Card extends Component {
   render() {
+    const CardBody = (props) => {
+      if (props.inEditMode) {
+        return (
+          <textarea
+            className="Card-body"
+            defaultValue={props.text}
+          />
+        );
+      } else {
+        return (
+          <div className="Card-body">
+            {props.text}
+          </div>
+        );
+      }
+    };
+
     return (
       <article className={'Card ' + this.props.type}>
-        <header className="Card-header">
-          <span className="author">f.l.</span>
+        <CardBody text={this.props.value} inEditMode={false} />
+
+        <footer className="Card-footer">
+          <span className="author">created by: ZF</span>
           <a className="button" href="#">edit</a>
           <a className="button" href="#">delete</a>
-        </header>
-
-        <div className="Card-body">
-          {this.props.value}
-        </div>
+        </footer>
       </article>
     );
   }

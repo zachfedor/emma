@@ -6,7 +6,7 @@ describe('Card Component', () => {
 
   it('should render', () => {
     const component = shallow(
-      <Card type="rule" />
+      <Card type="rule" value="value" />
     );
 
     expect(component.find('.Card').length).toBe(1);

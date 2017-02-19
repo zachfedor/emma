@@ -10,7 +10,12 @@ const store = createStore(reducer);
 describe('CardList', () => {
 
   it('should render without crashing', () => {
-    const component = shallow(<CardList />);
+    const component = shallow(
+      <CardList
+        type="rule"
+        cards={[]}
+      />
+    );
 
     expect(component.exists()).toBe(true);
   });

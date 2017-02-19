@@ -1,50 +1,68 @@
 .Card {
+  position: relative;
   margin-top: 2rem;
+  padding-top: 15px;
   /* border: 1px solid #222; */
   border-radius: 2px;
   box-shadow: 1px 1px 4px rgba(34, 34, 34, 0.3);
 }
 
-.Card .Card-header {
-  padding: 5px 0.5rem;
-  text-align: right;
-  /* border-bottom: 1px solid #222; */
+.Card:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
 
-.Card:hover .Card-header {
-  height: auto;
+.Card.rule:before {
+  background-color: #466C95;
 }
 
-.Card.rule .Card-header {
-  background: #466C95;
+.Card.example:before  {
+  background-color: #5DAE8B;
 }
 
-.Card.example .Card-header {
-  background: #5DAE8B;
-}
-
-.Card.question .Card-header {
-  background: #FF7676;
+.Card.question:before  {
+  background-color: #FF7676;
 }
 
 .Card .Card-body {
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
-.Card-header .author {
-  color: rgba(255, 255, 255, 0.7);
-}
-.Card-header .author:before {
-  content: 'created by: ';
+.Card .Card-footer {
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 
-.Card-header .button {
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-  margin-left: 4px;
-  padding: 0 4px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+.Card:hover .Card-footer {
+  opacity: 1;
+}
+
+.Card-footer .author,
+.Card-footer .button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: rgba(34, 34, 34, 0.3);
+}
+
+.Card-footer .author {
+  width: 60%;
+}
+
+.Card-footer .button {
+  width: 20%;
   border-radius: 2px;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.Card-footer .button:hover {
+  color: rgba(34, 34, 34, 0.6);
 }
