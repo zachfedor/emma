@@ -13,7 +13,8 @@
   clear: both;
 }
 
-h1.title, a.header-link {
+h1.title,
+nav.header-links {
   display: block;
   float: left;
   width: 50%;
@@ -22,15 +23,26 @@ h1.title, a.header-link {
   font-family: 'Arvo', serif;
   font-size: 2rem;
   font-weight: normal;
+}
+
+nav.header-links {
   text-align: right;
 }
 
-h1.title a, a.header-link {
+h1.title a,
+a.header-link {
+  border-bottom: 5px solid transparent;
   color: #222;
   text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.3s;
 }
 
-.App-header h1.title {
-  text-align: left;
+h1.title a:focus,
+h1.title a:hover,
+a.header-link:focus,
+a.header-link:hover {
+  outline: none;
+  border-color: #f6f49d;
 }
 

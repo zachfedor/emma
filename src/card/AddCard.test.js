@@ -28,7 +28,7 @@ describe('AddCard', () => {
 
     expect(component.exists()).toBe(true);
     expect(component.find('button').text()).toBe('add rule');
-    expect(component.find('input').text()).toBe('');
+    expect(component.find('textarea').text()).toBe('');
   });
 
   it('should handle form submission', () => {
@@ -39,7 +39,7 @@ describe('AddCard', () => {
     );
 
     // set the input and submit the form
-    const input = component.find('input').first();
+    const input = component.find('textarea').first();
     const form = component.find('form').first();
     input.node.value = 'test';
     input.simulate('change', input);

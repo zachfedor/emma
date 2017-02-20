@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addRule, addQuestion, addExample } from '../app/actions';
+import './AddCard.css';
 
 const mapStateToProps = (state, ownProps) => {
   return {};
@@ -34,11 +35,12 @@ export const _AddCard = (props) => {
     event.preventDefault();
     props.handleSubmit(input.value);
     input.value = '';
+    input.focus();
   }
 
   return (
     <form className="AddCard" onSubmit={_handleSubmit}>
-      <input ref={node => { input = node; }} />
+      <textarea ref={node => { input = node; }} />
 
       <button type="submit">add {props.type}</button>
     </form>

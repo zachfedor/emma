@@ -8,7 +8,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="title"><a href="#">emma</a></h1>
-          <a className="header-link" href="#">about</a>
+
+          <nav className="header-links">
+            <a className="header-link" href="#">about</a>
+          </nav>
         </header>
 
         <Wrapper />
