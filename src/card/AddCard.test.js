@@ -73,11 +73,31 @@ describe('_AddCard', () => {
     // check handleSubmit
     expect(component.instance().props.handleSubmit).toBe(spy);
     expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('should call submit function', () => {
+    const spy = jest.fn();
+    const component = mount(
+      <_AddCard type="example" handleSubmit={spy} />
+    );
+
+    // initial check
+    expect(component.instance().props.handleSubmit).toBe(spy);
+    expect(spy).not.toHaveBeenCalled();
+
+    // call handleSubmit with empty string
+    component.find('form').simulate('submit');
+    expect(spy).not.toHaveBeenCalled();
+
+    // add value to textarea
+    const input = component.find('textarea');
+    input.first().simulate('change', {target: {value: 'test'}});
 
     // call handleSubmit
     component.find('form').simulate('submit');
     expect(spy).toHaveBeenCalled();
   });
+
 
 });
 

@@ -31,16 +31,25 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 export const _AddCard = (props) => {
   let input;
+  let value = '';
+
   const _handleSubmit = (event) => {
     event.preventDefault();
-    props.handleSubmit(input.value);
-    input.value = '';
-    input.focus();
+
+    if(value !== '') {
+      props.handleSubmit(value);
+      // TODO: figure out a way to find the input without using a ref
+      input.value = '';
+      input.focus();
+    }
+  }
+  const _handleChange = (event) => {
+    value = event.target.value;
   }
 
   return (
     <form className="AddCard" onSubmit={_handleSubmit}>
-      <textarea ref={node => { input = node; }} />
+      <textarea ref={node => { input = node; }} onChange={_handleChange}/>
 
       <button type="submit">add {props.type}</button>
     </form>
