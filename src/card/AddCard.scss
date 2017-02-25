@@ -1,0 +1,49 @@
+@import '../styles/variables.scss';
+
+.AddCard {
+  position: relative;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 2px;
+  @include sm-shadow();
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  textarea,
+  button {
+    padding: 0.5rem;
+    border: 1px solid $black;
+    border-radius: 2px;
+    font-size: 1rem;
+    transition: box-shadow 0.3s;
+  }
+
+  textarea {
+    position: relative;
+    width: 100%;
+    height: 36px;
+    resize: vertical;
+
+    &:focus {
+      outline: none;
+      @include lg-shadow();
+    }
+  }
+
+  button {
+    float: right;
+    margin-top: 0.5rem;
+    background-color: $white;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      @include lg-shadow();
+    }
+  }
+}

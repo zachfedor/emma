@@ -1,0 +1,11 @@
+.CardList {
+  width: 35vw;
+
+  &.rule {
+    float: left;
+  }
+
+  &.question {
+    float: right;
+  }
+}

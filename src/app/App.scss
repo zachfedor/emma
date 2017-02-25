@@ -1,0 +1,47 @@
+@import '../styles/variables.scss';
+
+.App {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.App-header {
+  padding-top: 5vh;
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  h1.title,
+  nav.header-links {
+    display: block;
+    float: left;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    font-family: $slab;
+    font-size: 2rem;
+    font-weight: normal;
+  }
+
+  nav.header-links {
+    text-align: right;
+  }
+
+  h1.title a,
+  a.header-link {
+    border-bottom: 5px solid transparent;
+    color: $black;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+
+    &:focus,
+    &:hover {
+      outline: none;
+      border-color: $yellow;
+    }
+  }
+}
