@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import CardList from '../card/CardList';
+import CardList from 'card/CardList';
 
 const mapStateToProps = (state, { ruleId }) => {
   return {

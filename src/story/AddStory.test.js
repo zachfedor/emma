@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import AddStory from './AddStory';
+import AddStory from 'story/AddStory';
 
 describe('<AddStory />', () => {
 

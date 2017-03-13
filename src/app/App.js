@@ -1,21 +1,30 @@
 import React, { Component } from 'react';
-import Wrapper from './Wrapper';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+import Wrapper from 'app/Wrapper';
+import About from 'app/About';
+import 'app/App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="title"><a href="#">exemplify</a></h1>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="title"><Link to="/">exemplify</Link></h1>
 
-          <nav className="header-links">
-            <a className="header-link" href="#">about</a>
-          </nav>
-        </header>
+            <nav className="header-links">
+              <Link className="header-link" to="/about">about</Link>
+            </nav>
+          </header>
 
-        <Wrapper />
-      </div>
+          <Route exact path="/" component={Wrapper} />
+          <Route path="/about" component={About} />
+        </div>
+      </Router>
     );
   }
 }

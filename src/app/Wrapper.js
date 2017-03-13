@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Story from '../story/Story';
-import Rules from '../rule/Rules';
-import Questions from '../question/Questions';
-import './Wrapper.css';
+import Story from 'story/Story';
+import Rules from 'rule/Rules';
+import Questions from 'question/Questions';
+import 'app/Wrapper.css';
 
 const mapStateToProps = (state) => {
   return {
