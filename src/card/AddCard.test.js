@@ -66,13 +66,40 @@ describe('_AddCard', () => {
       <_AddCard type="example" handleSubmit={spy} />
     );
 
-    // check type
+    // check type prop
     expect(component.instance().props.type).toBe('example');
-    expect(component.find('button').text()).toBe('add example');
 
-    // check handleSubmit
+    // check handleSubmit prop
     expect(component.instance().props.handleSubmit).toBe(spy);
     expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('should render a rule', () => {
+    const component = shallow(<_AddCard type="rule"/>);
+
+    expect(component.find('textarea').length).toBe(1);
+    expect(component.find('button').text()).toBe('add rule');
+  });
+
+  it('should render an example', () => {
+    const component = shallow(<_AddCard type="example"/>);
+
+    expect(component.find('textarea').length).toBe(1);
+    expect(component.find('button').text()).toBe('add example');
+  });
+
+  it('should render a question', () => {
+    const component = shallow(<_AddCard type="question"/>);
+
+    expect(component.find('textarea').length).toBe(1);
+    expect(component.find('button').text()).toBe('add question');
+  });
+
+  it('should render a story', () => {
+    const component = shallow(<_AddCard type="story"/>);
+
+    expect(component.find('textarea').length).toBe(1);
+    expect(component.find('button').text()).toBe('start mapping');
   });
 
   it('should call submit function', () => {
@@ -97,7 +124,6 @@ describe('_AddCard', () => {
     component.find('form').simulate('submit');
     expect(spy).toHaveBeenCalled();
   });
-
 
 });
 

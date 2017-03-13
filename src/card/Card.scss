@@ -20,6 +20,10 @@
   }
 
   // Card Types
+  &.story:before {
+    background-color: $yellow;
+  }
+
   &.rule:before {
     background-color: $blue;
   }

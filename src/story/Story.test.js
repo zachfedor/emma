@@ -3,6 +3,8 @@ import { shallow, mount } from 'enzyme';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import Story, { _Story } from './Story';
+import AddCard from '../card/AddCard';
+import Card from '../card/Card';
 import reducer from '../app/reducer';
 
 const store = createStore(reducer);
@@ -25,28 +27,36 @@ describe('Story', () => {
 describe('_Story', () => {
 
   it('should render without crashing', () => {
-    const component = shallow(<_Story />);
+    const component = shallow(<_Story story="story"/>);
 
     expect(component.exists()).toBe(true);
+    expect(component.find('section').length).toBe(1);
   });
 
   it('should have props', () => {
     const spy = jest.fn();
-    const component = shallow(<_Story story="Story" onSetStory={spy} />);
+    const component = shallow(<_Story story="story" onSetStory={spy} />);
 
     expect(component.instance().props.story).toBeDefined();
     expect(component.instance().props.onSetStory).toBeDefined();
   });
 
-  it('should handle onChange event', () => {
+  it('should render a Card component', () => {
     const spy = jest.fn();
-    const component = mount(<_Story story="Story" onSetStory={spy} />);
-    const input = component.find('input');
+    const component = mount(<_Story story="story" onSetStory={spy} />);
 
-    input.simulate('change');
+    expect(component.find(Card).length).toBe(1);
+  });
 
-    expect(spy).toHaveBeenCalled();
-    expect(spy.mock.calls[0]).toEqual(['Story']);
+  it('should render an AddCard component', () => {
+    const spy = jest.fn();
+    const component = mount(
+      <Provider store={store}>
+        <_Story story="" onSetStory={spy} />
+      </Provider>
+    );
+
+    expect(component.find(AddCard).length).toBe(1);
   });
 
 });

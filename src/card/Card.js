@@ -35,7 +35,7 @@ class Card extends Component {
 };
 
 Card.propTypes = {
-  type: PropTypes.oneOf(['rule', 'example', 'question']).isRequired,
+  type: PropTypes.oneOf(['story', 'rule', 'example', 'question']).isRequired,
   value: PropTypes.string.isRequired
 };
 

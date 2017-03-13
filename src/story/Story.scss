@@ -1,0 +1,13 @@
+@import '../styles/variables.scss';
+
+.Story {
+  display: block;
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+
+  input {
+    border: none;
+    border-bottom: 2px solid $black;
+  }
+}

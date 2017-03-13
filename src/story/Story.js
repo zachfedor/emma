@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setStory } from '../app/actions';
+import AddCard from '../card/AddCard';
+import Card from '../card/Card';
 import './Story.css';
 
 const mapStateToProps = (state) => {
@@ -17,25 +19,23 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-
-let id = 0;
-
-export const _Story = ({ story, onSetStory }) => {
-  const _onChange = (event) => {
-    event.preventDefault();
-    onSetStory(event.target.value);
+export const _Story = (props) => {
+  const optionalElement = (story, onSetStory) => {
+    if(story !== '') {
+      return (
+        <Card type="story" value={story} />
+      );
+    } else {
+      return (
+        <AddCard type="story" handleSubmit={onSetStory} />
+      );
+    }
   };
-  const componentId = "story-input-" + id++;
 
   return (
-    <form className="Story">
-      <label htmlFor={componentId}>What's your user story?</label>
-      <input
-        id={componentId}
-        onChange={_onChange}
-        value={story}
-      />
-    </form>
+    <section className="Story">
+      {optionalElement(props.story, props.onSetStory)}
+    </section>
   );
 };
 
