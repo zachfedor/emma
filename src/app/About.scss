@@ -1,0 +1,28 @@
+@import '../styles/variables.scss';
+
+.About {
+  width: 60vw;
+  padding-top: 5vh;
+  margin: 0 auto;
+
+  h1 {
+    border-bottom: 5px solid $yellow;
+    font-family: $slab;
+  }
+
+  a {
+    text-decoration: none;
+    color: $blue;
+    border-bottom: 3px solid transparent;
+    transition: color ease 0.2s, border-color ease 0.2s;
+
+    &.special {
+      color: $red;
+    }
+
+    &:hover {
+      color: $green;
+      border-color: $green;
+    }
+  }
+}
