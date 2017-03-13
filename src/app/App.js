@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="title"><a href="#">emma</a></h1>
+          <h1 className="title"><a href="#">exemplify</a></h1>
 
           <nav className="header-links">
             <a className="header-link" href="#">about</a>
