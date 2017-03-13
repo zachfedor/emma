@@ -17,7 +17,7 @@
     "redux": "^3.6.0"
   },
   "scripts": {
-    "build-css": "node-sass src/ -o src/",
+    "build-css": "npm rebuild node-sass && node-sass src/ -o src/",
     "watch-css": "npm run build-css && node-sass src/ -o src/ --watch",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
