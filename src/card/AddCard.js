@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addRule, addQuestion, addExample, setStory } from '../app/actions';
-import './AddCard.css';
+import { addRule, addQuestion, addExample, setStory } from 'app/actions';
+import 'card/AddCard.css';
 
 const mapStateToProps = (state, ownProps) => {
   return {};

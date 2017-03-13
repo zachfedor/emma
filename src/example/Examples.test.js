@@ -2,8 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import Examples from './Examples';
-import reducer from '../app/reducer';
+import Examples from 'example/Examples';
+import reducer from 'app/reducer';
 
 const store = createStore(reducer);
 

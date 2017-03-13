@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setStory } from '../app/actions';
-import AddCard from '../card/AddCard';
-import Card from '../card/Card';
-import './Story.css';
+import { setStory } from 'app/actions';
+import AddCard from 'card/AddCard';
+import Card from 'card/Card';
+import 'story/Story.css';
 
 const mapStateToProps = (state) => {
   return {

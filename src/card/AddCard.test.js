@@ -2,8 +2,8 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import AddCard, { _AddCard } from './AddCard';
-import reducer from '../app/reducer';
+import AddCard, { _AddCard } from 'card/AddCard';
+import reducer from 'app/reducer';
 
 const store = createStore(reducer);
 

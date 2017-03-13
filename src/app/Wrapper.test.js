@@ -2,9 +2,9 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import Wrapper, { _Wrapper } from './Wrapper';
-import { setStory } from './actions';
-import reducer from './reducer';
+import Wrapper, { _Wrapper } from 'app/Wrapper';
+import { setStory } from 'app/actions';
+import reducer from 'app/reducer';
 
 const store = createStore(reducer);
 

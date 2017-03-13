@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import './Card.css';
+import 'card/Card.css';
 
 class Card extends Component {
   render() {

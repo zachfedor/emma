@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import Card from './Card';
-import AddCard from './AddCard';
-import './CardList.css';
+import Card from 'card/Card';
+import AddCard from 'card/AddCard';
+import 'card/CardList.css';
 
 class CardList extends Component {
   render() {
