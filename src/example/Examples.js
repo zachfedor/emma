@@ -2,9 +2,13 @@ import { connect } from 'react-redux';
 import CardList from 'card/CardList';
 
 const mapStateToProps = (state, { ruleId }) => {
+  const examples = state.examplesByRule[ruleId];
+  const cards = examples ? examples : [];
+  console.log(cards);
+
   return {
     type: 'example',
-    cards: state.examplesByRule[ruleId]
+    cards,
   };
 };
 

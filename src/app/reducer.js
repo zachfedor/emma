@@ -1,4 +1,4 @@
-import * as actions from 'app/actions';
+import * as constants from 'app/constants';
 
 export const initialState = {
   story: '',
@@ -16,19 +16,19 @@ const exampleByRule = (state = [], action) => {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actions.SET_STORY:
+    case constants.SET_STORY:
       return {
         ...state,
         story: action.story
       };
 
-    case actions.ADD_RULE:
+    case constants.ADD_RULE:
       return {
         ...state,
         rules: [...state.rules, action.rule]
       };
 
-    case actions.ADD_EXAMPLE:
+    case constants.ADD_EXAMPLE:
       const id = action.ruleId;
       const examplesByRule = Object.assign(
         {},
@@ -41,13 +41,13 @@ const reducer = (state = initialState, action) => {
         examplesByRule
       };
 
-    case actions.ADD_QUESTION:
+    case constants.ADD_QUESTION:
       return {
         ...state,
         questions: [...state.questions, action.question]
       };
 
-    case actions.RESET:
+    case constants.RESET:
       return initialState;
 
     default:

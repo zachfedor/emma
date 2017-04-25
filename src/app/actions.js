@@ -1,9 +1,10 @@
-// Actions
-export const SET_STORY    = 'SET_STORY';
-export const ADD_RULE     = 'ADD_RULE';
-export const ADD_EXAMPLE  = 'ADD_EXAMPLE';
-export const ADD_QUESTION = 'ADD_QUESTION';
-export const RESET        = 'RESET';
+import {
+  SET_STORY,
+  ADD_QUESTION,
+  ADD_RULE,
+  ADD_EXAMPLE,
+  RESET,
+} from 'app/constants';
 
 // Action Creators
 export const setStory = (story) => {

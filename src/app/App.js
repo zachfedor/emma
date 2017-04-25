@@ -21,7 +21,7 @@ class App extends Component {
             </nav>
           </header>
 
-          <Route exact path="/" component={Wrapper} />
+          <Route path="/" component={Wrapper} />
           <Route path="/about" component={About} />
         </div>
       </Router>

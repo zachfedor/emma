@@ -8,7 +8,6 @@ import reducer from 'app/reducer';
 const store = createStore(reducer);
 
 describe('AddCard', () => {
-
   it('should render without crashing', () => {
     const component = shallow(
       <Provider store={store}>
@@ -49,13 +48,15 @@ describe('AddCard', () => {
     expect(store.getState().rules.length).toBe(1);
     expect(store.getState().rules[0]).toBe('test');
   });
-
 });
 
-describe('_AddCard', () => {
 
+describe('_AddCard', () => {
   it('should render without crashing', () => {
-    const component = shallow(<_AddCard />);
+    const spy = jest.fn();
+    const component = shallow(
+      <_AddCard type="rule" handleSubmit={spy} />
+    );
 
     expect(component.exists()).toBe(true);
   });
@@ -75,28 +76,36 @@ describe('_AddCard', () => {
   });
 
   it('should render a rule', () => {
-    const component = shallow(<_AddCard type="rule"/>);
+    const component = shallow(
+      <_AddCard type="rule" handleSubmit={() => null} />
+    );
 
     expect(component.find('textarea').length).toBe(1);
     expect(component.find('button').text()).toBe('add rule');
   });
 
   it('should render an example', () => {
-    const component = shallow(<_AddCard type="example"/>);
+    const component = shallow(
+      <_AddCard type="example" handleSubmit={() => null} />
+    );
 
     expect(component.find('textarea').length).toBe(1);
     expect(component.find('button').text()).toBe('add example');
   });
 
   it('should render a question', () => {
-    const component = shallow(<_AddCard type="question"/>);
+    const component = shallow(
+      <_AddCard type="question" handleSubmit={() => null} />
+    );
 
     expect(component.find('textarea').length).toBe(1);
     expect(component.find('button').text()).toBe('add question');
   });
 
   it('should render a story', () => {
-    const component = shallow(<_AddCard type="story"/>);
+    const component = shallow(
+      <_AddCard type="story" handleSubmit={() => null} />
+    );
 
     expect(component.find('textarea').length).toBe(1);
     expect(component.find('button').text()).toBe('start mapping');
@@ -124,6 +133,5 @@ describe('_AddCard', () => {
     component.find('form').simulate('submit');
     expect(spy).toHaveBeenCalled();
   });
-
 });
 

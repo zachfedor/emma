@@ -1,31 +1,29 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import Card from 'card/Card';
 import AddCard from 'card/AddCard';
 import 'card/CardList.css';
 
-class CardList extends Component {
-  render() {
-    const cardElements = !this.props.cards ? null :
-      this.props.cards.map((card, index) => {
-        return (
-          <Card
-            type={this.props.type}
-            value={card}
-            key={index}
-          />
-        );
-      });
+const CardList = ({ type, cards, examplesById }) => {
+  const cardElements = !cards ? null :
+    cards.map((card, index) => {
+      return (
+        <Card
+          key={index}
+          type={type}
+          value={card}
+        />
+      );
+    });
 
-    return (
-      <section className={ 'CardList ' + this.props.type }>
-        <h2>{this.props.type}</h2>
+  return (
+    <section className={ 'CardList ' + type }>
+      <h2>{type}</h2>
 
-        {cardElements}
+      {cardElements}
 
-        <AddCard type={this.props.type} />
-      </section>
-    );
-  }
+      <AddCard type={type} />
+    </section>
+  );
 };
 
 CardList.propTypes = {

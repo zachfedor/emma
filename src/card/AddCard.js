@@ -1,27 +1,31 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { addRule, addQuestion, addExample, setStory } from 'app/actions';
+import { CARD_TYPES } from 'app/constants';
 import 'card/AddCard.css';
 
-const mapStateToProps = (state, ownProps) => {
+
+const mapStateToProps = (state) => {
   return {};
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   let addFunction;
   switch (ownProps.type) {
-    case 'rule':
-      addFunction = addRule;
+    case 'story':
+      addFunction = setStory;
       break;
     case 'question':
       addFunction = addQuestion;
       break;
+    case 'rule':
+      addFunction = addRule;
+      break;
     case 'example':
       addFunction = addExample;
       break;
-    case 'story':
     default:
-      addFunction = setStory;
+      addFunction = () => null;
   }
 
   return {
@@ -34,32 +38,24 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export const _AddCard = (props) => {
-  let input, buttonText;
-  let value = '';
+export const _AddCard = ({ type, handleSubmit }) => {
   let autofocus = false;
+  let buttonText = '';
+  let input;
+  let value = '';
 
-  switch (props.type) {
-    case 'rule':
-      buttonText = 'add rule';
-      break;
-    case 'question':
-      buttonText = 'add question';
-      break;
-    case 'example':
-      buttonText = 'add example';
-      break;
-    case 'story':
-    default:
-      autofocus = true;
-      buttonText = 'start mapping';
+  if(type === 'story') {
+    autofocus = true;
+    buttonText = 'start mapping';
+  } else {
+    buttonText = `add ${type}`;
   }
 
   const _handleSubmit = (event) => {
     event.preventDefault();
 
     if(value !== '') {
-      props.handleSubmit(value);
+      handleSubmit(value);
       // TODO: figure out a way to find the input without using a ref
       input.value = '';
       input.focus();
@@ -71,7 +67,7 @@ export const _AddCard = (props) => {
 
   return (
     <form
-      className={`AddCard ${props.type}`}
+      className={`AddCard ${type}`}
       onSubmit={_handleSubmit}
     >
       <textarea
@@ -84,6 +80,11 @@ export const _AddCard = (props) => {
       <button type="submit">{buttonText}</button>
     </form>
   );
+};
+
+_AddCard.propTypes = {
+  type: PropTypes.oneOf(CARD_TYPES).isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 const AddCard = connect(
